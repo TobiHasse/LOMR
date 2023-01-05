@@ -15,10 +15,10 @@ The dissertation includes the code as appendices and that code runs to completio
 - The Signal Processin Toolbox, and
 - The Statistics and Machine Learning Toolbox.
 
-# This repository contains additional code to eliminate those dependencies:
+## This repository contains additional code to eliminate those dependencies:
 
 
-# Other changes from the original LOMB to this repository LOMR include
+### Other changes from the original LOMB to this repository LOMR include
 - Adjustments to algorithms here and there to boost computational performance.
 - Writing portions of the code in c and compiling it for MATLAB, particularly the code which calculates the hydrodynamic flowfield of the meandering river
 - Truncating the algorithm to calculate the flowfield
