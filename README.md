@@ -9,13 +9,13 @@ Schwenk, Jon, Stefano Lanzoni, and Efi Foufoula‐Georgiou. "The life of a meand
 - https://agupubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2F2014JF003252&file=jgrf20377-sup-0001-Readme.rtf
 - https://agupubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2F2014JF003252&file=jgrf20377-sup-0002-CodesS1.zip 
 
-The code in this repository is required for (my) Tobias Hasse's dissertation: Hasse, Tobias Raphael. "Storage Time Dynamics of Meandering River Floodplain Sediments: A Modeling Study." PhD diss., University of Delaware, 2021.
+The code in this repository is required for (my) dissertation: Hasse, Tobias Raphael. "Storage Time Dynamics of Meandering River Floodplain Sediments: A Modeling Study." PhD diss., University of Delaware, 2021.
 
 The dissertation includes the code as appendices and that code runs to completion but is dependant on two MATLAB toolboxes:
 - The Signal Processin Toolbox, and
 - The Statistics and Machine Learning Toolbox.
 
-## This repository contains additional code to eliminate those dependencies:
+### This repository contains additional code to eliminate those dependencies:
 
 
 ### Other changes from the original LOMB to this repository LOMR include
