@@ -2,7 +2,9 @@
 Life Of a Meandering River
 This repository was created by Tobias Hasse (tobiack@udel.edu) to host source code related to my thesis research.
 
-This code is a Fork of Jon Schwenk's Life Of a Meander Bend (LOMB) source code published in conjunction with his fascinating article: Schwenk, Jon, Stefano Lanzoni, and Efi Foufoula‐Georgiou. "The life of a meander bend: Connecting shape and dynamics via analysis of a numerical model." Journal of Geophysical Research: Earth Surface 120.4 (2015): 690-710. 
+This code is a Fork of Jon Schwenk's Life Of a Meander Bend (LOMB) source code published in conjunction with his fascinating article: 
+Schwenk, Jon, Stefano Lanzoni, and Efi Foufoula‐Georgiou. "The life of a meander bend: Connecting shape and dynamics via analysis of a numerical model." Journal of Geophysical Research: Earth Surface 120.4 (2015): 690-710. 
+
 Open access article is available here: https://doi.org/10.1002/2014JF003252 
 Readme and code repositories are available as part of the supplementary information here:
 https://agupubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1002%2F2014JF003252&file=jgrf20377-sup-0001-Readme.rtf
