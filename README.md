@@ -2,6 +2,13 @@
 Life Of a Meandering River
 This repository was created by Tobias Hasse (tobiack@udel.edu) to host source code related to my thesis research.
 
+### Function and use
+- LOMR will generate the planform evolution and history of a meandring river, output as a MATLAB struct of river (X,Y) coordinate pairs for the evolution timeseries
+- LOMR output can be used for further analysis by other repositories, MRDAST, MRLATS, MRVIST studying:
+-- Meandering River Dynamics and Storage Time
+-- Meandering River Length and Time Scales
+-- Meandering River Variability in Storage Time
+
 This code is a Fork of Jon Schwenk's Life Of a Meander Bend (LOMB) source code published in conjunction with his fascinating article: 
 Schwenk, Jon, Stefano Lanzoni, and Efi Foufoula‐Georgiou. "The life of a meander bend: Connecting shape and dynamics via analysis of a numerical model." Journal of Geophysical Research: Earth Surface 120.4 (2015): 690-710. 
 - Open access article is available here: https://doi.org/10.1002/2014JF003252 
