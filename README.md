@@ -25,7 +25,7 @@ The dissertation includes the code as appendices and that code runs to completio
 - Writing portions of the code in c and compiling it for MATLAB, particularly the code which calculates the hydrodynamic flowfield of the meandering river
 - Truncating the algorithm to calculate the flowfield
 
-### additional changes which are recommended:
+### Additional changes which are recommended:
 - There is more commentary in the code and in my dissertation on why these changes are appropriate
 - These changes will be made in a fork of this repo.  This repo is designed to replicate the dissertation work and so these improvements have not been made...yet
 - in migration_model_TRH_CH2.m line 260, change the function call for computing ub, the downstream velocity variable, to use the constant hypothetical bank-full channel depth Do rather than the ever-changing channel depth D_ch(t).  
