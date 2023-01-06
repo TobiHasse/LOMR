@@ -114,6 +114,17 @@ riv2 = river ([start_time:dt:end_time]);
 save(sprintf('%s_30yr_A%d_Cfo%0.3f_2Eo_offset.mat',...
     outfile,Ain,CFO),'riv2','B','start_time','-v7.3') 
 
+
+
+%% The following code is for analysing
+% Meandering River Dynamics and Storage Time github repo: MRDAST
+% MRDAST depends on the LOMR repo to generate the meandering river
+% planform evolution and history
+
+
+
+
+
 %% Read in the saved channel planforms and view
 
 % ********** LOAD riv, B, riv2, TO RUN CODE BLOCKS BELOW ************
