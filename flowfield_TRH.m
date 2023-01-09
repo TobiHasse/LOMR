@@ -103,12 +103,12 @@ else % compute convelution integral without truncation
                 integrands(2:end))/2;
     end
 %% for comparing methods of computing the int_term
-    % change one of the int_term variables above to int_t
-    if max((int_term - int_t).^2) > 10^-9  % test for accuracy
-        sprintf('new method is not computing int term right')
-        max((int_term - int_t).^2)
-        keyboard
-    end
+%     % change one of the int_term variables above to int_t
+%     if max((int_term - int_t).^2) > 10^-9  % test for accuracy
+%         sprintf('new method is not computing int term right')
+%         max((int_term - int_t).^2)
+%         keyboard
+%     end
     
 %% for comparing methods of computing the int_term
 % could also taking the abs() of each term before comparing?
