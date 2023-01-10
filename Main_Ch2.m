@@ -22,7 +22,8 @@
 % close all
 % clear
 % cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
-cd 'C:\Users\thasse\Documents\MATLAB\meander code\Ch2\bug fix' %
+% cd 'C:\Users\thasse\Documents\MATLAB\meander code\Ch2\bug fix' %
+cd 'C:\Users\thasse\Documents\MATLAB\test\test2' %
 
 dt_save_years = 2;                  % save river planform every ## years
 
@@ -38,7 +39,8 @@ save_initial_planform()             % initial random planform
 
 do_you_have_stats_toolbox = 0;      % enter 1 if you have the Statistics 
                                     % Toolbox, else enter 0
-sim_time_ky = 1; % 205.35;%211;     % simulation time in thousands of years
+sim_time_ky = 5; %211;              % simulation time in thousands of years
+                                    % note orig sim deleted after 205.55
 sim_time = sim_time_ky * 1000;
 dt_save = 12;                       % save every ## iterations
 dt =     dt_save_years / dt_save;
@@ -62,9 +64,9 @@ dt =     dt_save_years / dt_save;
 % [river, nodecount, B, mxub, freq_mig] = migration_model_TRH(CFO(i),...
 %     Ain(i), do_you_have_stats_toolbox,outfile,sim_time,dt,dt_save); %
 
-% i=1; CFO = 0.024; Ain = 3;     % Hasse
+i=1; CFO = 0.024; Ain = 3;     % Hasse
 % i=1; CFO = 0.01; Ain = 16;     % Testing
-i=1; CFO = 0.0036; Ain = 10; % Schwenk
+% i=1; CFO = 0.0036; Ain = 10; % Schwenk
 outfile = 'code cleanup' %Ch2 2016 params'
 [river, nodecount, B, freq_mig] = migration_model_TRH_Ch2(CFO(i), ...
     Ain(i), do_you_have_stats_toolbox, outfile, sim_time, dt, dt_save); 

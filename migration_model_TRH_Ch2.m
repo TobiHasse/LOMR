@@ -63,7 +63,7 @@ par_cut = 0;            % the intersections search can be parallelized
 %TRH save_stats = 0;    % saves various statistics in structure called stat
 save_riv_vars = 0;      % saves river variables Xcl, Ycl, mig_Xcl, mig_Ycl 
                         % (centerlines and migrations at each time step)
-save_nodecount = 1;     % saves variables needed to perform node tracking 
+save_nodecount = 0;     % saves variables needed to perform node tracking 
                         % - used for atom identification
 nodecount = 0;          %if not saving nodecount, gives something to return
 % save_dt = 20;     %(TRH passed into function) to save every nth time step
@@ -88,7 +88,7 @@ save_mem = 0;        % uses single precision instead of double if activated
 sim_time = ceil(sim_time_yrs/dt_yrs); % number of time steps, no dimensions 
 dt = dt_yrs*365.25*24*3600; % time step in seconds
 % disp_progress =  10000;  % display t every disp_progress time step
-disp_progress = floor( sim_time / 10 ); % show progress every 1/10th
+disp_progress = floor( sim_time / 60 ); % show progress every 1/60th
 % disp_progress = floor( sim_time / 2 );    % only show 50% complete model
 
 % number of segments to divide channel width into; effectively sets 
@@ -370,7 +370,7 @@ if ~mod(t,save_dt) %TRH saves river planform, but not every time step
     river(save_t).Ycl = Y;
     % TRH lenngth of each bend to left or right ÷ half width and tortuosity 
  % yeilds wavelength in channel widths measured down valley thru tortuosity
-    waves(t).length=(diff(S_cum(abs(diff(temp))==1))/(B*tortuosity));
+    waves(save_t).length=(diff(S_cum(abs(diff(temp))==1))/(B*tortuosity));
     if save_riv_vars == 1
         river(save_t).Xmig = dX_cl/dt; % migration distance
         river(save_t).Ymig = dY_cl/dt; % migration distance
