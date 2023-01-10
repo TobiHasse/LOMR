@@ -315,19 +315,17 @@ if statstoolbox
     [X, Y, cut_idx,cell_row_offset] = remove_cutoffs_TRH(mig_Xcl,...
         mig_Ycl, search_radius, search_excl_range, cell_row_offset);
 else
-%     fprintf(['WARNING: The function cutoff smooths cutoffs inside\nbut',...
-%         ' using different parameters than smooth_after_cutoffs below\n'])
-%     pause(2)
-    % 2023 cutoff is cutting off when it should not. removing large
-    % sections of river centerline
-%     [X,Y,n_cutoffs,Xl,Yl,Xr,Yr,cut_idx,ncut] = cutoff(mig_Xcl,mig_Ycl,...
-%         B,par_cut);
+    fprintf(['WARNING: The function cutoff smooths cutoffs inside\nbut',...
+        ' using different parameters than smooth_after_cutoffs below\n'])
+    pause(2)
+    [X,Y,n_cutoffs,Xl,Yl,Xr,Yr,cut_idx,ncut] = cutoff(mig_Xcl,mig_Ycl,...
+        B,par_cut);
     % make TRH_rm_cutoffs call here for no stats pack, pbbly faster than 
     % cutoff b.c. similar speed to remove_cutoffs
-    [X, Y, cut_idx] = TRH_rm_cutoffs(mig_Xcl, mig_Ycl, search_radius,...
-        search_excl_range);
+%     [X, Y, cut_idx] = TRH_rm_cutoffs(mig_Xcl, mig_Ycl, search_radius,...
+%         search_excl_range);
 end
-% keyboard
+
 % smooth around cutoffs
 % clock_cutoff = clock_cutoff + toc; tic
 if isempty(cut_idx) == 0  % if there were cutoffs, smooth them
@@ -420,8 +418,7 @@ if rem(t,disp_progress) == 0
         plot([1:length(bends)],wavelength_straight,[1:length(bends)],bends)
         title(sprintf(strcat('Number of bends, average average',...
             'wavelength %1.1f ± %0.2f of average'),...
-            mean(wavelength_straight,'omitnan'),...
-            std(wavelength_straight,'omitnan')))
+            nanmean(wavelength_straight),nanstd(wavelength_straight)))
         xlabel('Model time steps'); 
         ylabel('Down valley AVERAGE meander wavelength, Bends');
         drawnow
@@ -444,7 +441,7 @@ if rem(t,disp_progress) == 0
 %         all_waves(1:10000)=[];  %suggest trimming off early measurements
         histogram(all_waves)
         title(sprintf('histogram of wavelengths avg %0.2f ± %0.3f',...
-            mean(all_waves,'omitnan'),std(all_waves,'omitnan')))
+            nanmean(all_waves),nanstd(all_waves)))
         xlabel(sprintf('all waves Cfo %f, A %f, sim time %d years',...
             Cfo,alphaao,sim_time_yrs))
         ylabel('Frequency')
@@ -498,7 +495,7 @@ beep;pause(1);beep;
 disp('You have reached the end of migration_model_TRH_Ch2.m')
 disp('You have keyboard control of the variables.')
 disp('You are encouraged to save variables and figures as desired')
-disp('.svg and .fig are reccommended for editable figures.')
+disp('.svg and .fig are reccommended for editing.')
 disp('Type dbcont or dbquit to end keyboard control')
 keyboard % give user control dbquit or dbcontinue
 end % function
