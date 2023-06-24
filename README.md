@@ -19,7 +19,7 @@ Schwenk, Jon, Stefano Lanzoni, and Efi Foufoula‐Georgiou. "The life of a meand
 The code in this repository is required for my dissertation: Hasse, Tobias Raphael. "Storage Time Dynamics of Meandering River Floodplain Sediments: A Modeling Study." PhD diss., University of Delaware, 2021.
 
 The dissertation includes the code as appendices and that code runs to completion but is dependant on two MATLAB toolboxes:
-- The Signal Processin Toolbox, and
+- The Signal Processing Toolbox, and
 - The Statistics and Machine Learning Toolbox.
 
 ### This repository contains additional code to eliminate those dependencies:
