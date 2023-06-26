@@ -38,6 +38,6 @@ The dissertation includes the code as appendices and that code runs to completio
 - in migration_model_TRH_CH2.m line 260, change the function call for computing ub, the downstream velocity variable, to use the constant hypothetical bank-full channel depth Do rather than the ever-changing channel depth D_ch(t).  
 - in the flowfield_TRH.m file, fix the A = alphaa + 1, it should be -1 and should also be handled in a higher level (and more visible) function
 
-This repo is specifically set up to be called by functions in my repositories MRDAST & MRLATS and will generate output files which are part of the analysis in the repositories MRDAST & MRVIST, and together will duplicate the bulk of the dissertation work referenced above.
+This repo is specifically set up to be called by functions in my repositories MRDAST & MRLATS and will generate output files which are part of the analysis in the repositories MRDAST & MRVIST, and together will duplicate* the bulk of the dissertation work referenced above.  *It may be impossible to duplicate the simulation output without duplicating the machine which was a 32(?) bit MAC.  This is because the code written in c and compiled became a mexmaci64 file which is specific to the software and hardware set up.  Comparisons of the simulations show remarkable similarity over the first few thousand simulation years, before chaotic divergence.
 
 A package of code files will be added to this repository at a later time: NOW COMPLETED!
