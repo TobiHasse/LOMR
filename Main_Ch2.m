@@ -23,7 +23,7 @@
 % clear
 % cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
 % cd 'C:\Users\thasse\Documents\MATLAB\meander code\Ch2\bug fix' %
-cd 'C:\Users\thasse\Documents\MATLAB\test\test2' %
+cd 'C:\Users\thasse\Documents\MATLAB\testNewFlow' %
 
 dt_save_years = 2;                  % save river planform every ## years
 
@@ -64,10 +64,12 @@ dt =     dt_save_years / dt_save;
 % [river, nodecount, B, mxub, freq_mig] = migration_model_TRH(CFO(i),...
 %     Ain(i), do_you_have_stats_toolbox,outfile,sim_time,dt,dt_save); %
 
-i=1; CFO = 0.024; Ain = 3;     % Hasse
+% i=1; CFO = 0.024; Ain = 3;      % Hasse
 % i=1; CFO = 0.01; Ain = 16;     % Testing
 % i=1; CFO = 0.0036; Ain = 10; % Schwenk
-outfile = 'code cleanup' %Ch2 2016 params'
+i=1; CFO = 0.005; Ain = 12; % new → lambda = 11.5 ± 7.9
+
+outfile = '5ka_2023' %Ch2 2016 params'
 [river, nodecount, B, freq_mig] = migration_model_TRH_Ch2(CFO(i), ...
     Ain(i), do_you_have_stats_toolbox, outfile, sim_time, dt, dt_save); 
 
@@ -137,8 +139,12 @@ clear
 % load('Hasse_211ka_30yr_A3_Cfo24_2Eo.mat')
 % load('code cleanup_30yr_A16_Cfo0.010_2Eo.mat')
 % load('code cleanup_30yr_A16_Cfo0.010_2Eo_offset.mat')
-load('code cleanup_30yr_A10_Cfo0.004_2Eo.mat')
-load('code cleanup_30yr_A10_Cfo0.004_2Eo_offset.mat')
+% load('code cleanup_30yr_A10_Cfo0.004_2Eo.mat')
+% load('code cleanup_30yr_A10_Cfo0.004_2Eo_offset.mat')
+
+load('20ka_2023_30yr_A3_Cfo0.024_2Eo.mat')
+load('20ka_2023_30yr_A3_Cfo0.024_2Eo_offset.mat')
+
 beep; pause(1); beep
 
 
@@ -174,10 +180,10 @@ fprintf(['Suggested end simulation model step is %d. \nEnd simulation ',...
 display_model(riv, riv2, B)
 
 %% animate channel occupation 
-cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+% cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
 
 outfile = 'junk.gif'
-slice_interval = 6;
+slice_interval = 1;
 
 
 [valley_w_pxl,occ_bool] = chan_occ(outfile,slice_interval);
@@ -197,10 +203,10 @@ slice_interval = 6;
 % (per array). To manage these memory demands the model is sliced into 
 % short reaches and sediment is built and the storage times measured.
 
-cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+% cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
 
 load params_storage.mat
-
+end_sim = end_sim_rx; 
 show_slice_figures = true;
 
 % show the slices
@@ -210,7 +216,7 @@ show_slice_figures = true;
 
 % estimated run time ::::::::::::::::::: 40 to 100     ****** DAYS *******
 
-cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
+% cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
 
 restart = false
 slice = 0; % zero for first slice

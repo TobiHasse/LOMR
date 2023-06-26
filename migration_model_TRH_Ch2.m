@@ -110,9 +110,13 @@ g = 9.81;       % gravity, m/s^2
                                     % straight valley
 Cf_ch = Cfo;                        % initial friction factor
 S_val = S_valo;                     % initial valley slope
-alphaa = alphaao;                   % alphaa doesn't change in time
 W = B*2;                         % channel width, m, doesn't change in time
 So = S_valo/tortuosity(1);          % initial stream slope
+alphaa = alphaao - 1;               % alphaa doesn't change in time
+% Update 6/24/23, previously alphaa was passed to flowfield*.m and modified
+% the -1 modification is correct based on Johannessen & Parker 1985
+% eqs 14 & 15 which include an ERROR resulting in some authors using +1
+
 % initial reach-averaged depth (TRH is this only truely Do because 
 % tortuosity ? 1?)
 Do = (Qo/2/B)^(2/3)*(Cfo/g/So)^(1/3); 
@@ -252,13 +256,13 @@ chan_len(t) = S_cum(end);
 % Hasse 2015 flowfield_TRH solution (based on Schwenk's function)
 % TRH, Schwenk's method using sinuous channel parameters for simulation 
 % This method was used in Chapter 2 of Tobias Hasse's dissertation
-[ub] = flowfield_TRH(B,C,D_ch(t),S_cum,dS,alphaa,F2_ch(t),...
-    Cf_ch,appx_conv_int,conv_node_thresh); 
+% [ub] = flowfield_TRH(B,C,D_ch(t),S_cum,dS,alphaa,F2_ch(t),...
+%     Cf_ch,appx_conv_int,conv_node_thresh); 
 
 % TRH, correct method using hypothetical straightened reach parameters
 % **** USE THE [ub] FUNCTION CALL BELOW, NOT ABOVE FOR CORRECT RESULTS ****
-% [ub] = flowfield_TRH(B,C,Do     ,S_cum,dS,alphaa,F2o     ,Cf_ch,...
-%     appx_conv_int,conv_node_thresh); 
+[ub] = flowfield_TRH(B,C,Do     ,S_cum,dS,alphaa,F2o     ,Cf_ch,...
+    appx_conv_int,conv_node_thresh); 
 % the above closeley approximates Parker & Andrews 1985 Beatton River
 
 % TRH in the past I measured meander wavelength using fft on the curvature
@@ -422,6 +426,7 @@ if rem(t,disp_progress) == 0
             'wavelength %1.1f ± %0.2f of average'),...
             mean(wavelength_straight,'omitnan'),...
             std(wavelength_straight,'omitnan')))
+        legend('Wavelength','Bends');
         xlabel('Model time steps'); 
         ylabel('Down valley AVERAGE meander wavelength, Bends');
         drawnow

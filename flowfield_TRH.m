@@ -1,4 +1,4 @@
-function [ub] = flowfield_TRH( B, C, Do, s, dS, alphaa, F2, Cf_ch, ...
+function [ub] = flowfield_TRH( B, C, Do, s, dS, A, F2, Cf_ch, ...
     truncate_conv, node_thresh)
 % 11/19/2014 - Did speed tests on for computing integral two additional
 % ways: 1) over-allocating the integrands vector, padding the extras with
@@ -26,7 +26,8 @@ lam_o = -2*beta*Cf_ch; % characteristic expon describing upstream influence
 nu_o = B/Ro;
 
 % ************************************************************************
-A = alphaa + 1;%accounts for secondary flow, see Sun 1996 among many others 
+% 6/24/23 update, pass A into this function directly, not alphaa
+% A = alphaa + 1;%accounts for secondary flow, see Sun 1996 and many others 
 % TRH the +1 apparently comes from JP '85, equation 14 & 15 but the 
 % reference is in ERROR!!!!!!!!!!!!!! and it should be A = alphaa - 1
 % ************************************************************************
