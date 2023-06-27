@@ -19,11 +19,11 @@
 % This allows you to see commentary and variable definitions, or
 % make adjustements for your simulations
 
-% close all
-% clear
+close all
+clear
 % cd C:\Users\User\Documents\MATLAB\MyLib\Pub\Ch2\other
 % cd 'C:\Users\thasse\Documents\MATLAB\meander code\Ch2\bug fix' %
-cd 'C:\Users\thasse\Documents\MATLAB\testNewFlow' %
+cd 'C:\Users\thasse\Documents\MATLAB\test' %
 
 dt_save_years = 2;                  % save river planform every ## years
 
@@ -39,7 +39,7 @@ save_initial_planform()             % initial random planform
 
 do_you_have_stats_toolbox = 0;      % enter 1 if you have the Statistics 
                                     % Toolbox, else enter 0
-sim_time_ky = 5; %211;              % simulation time in thousands of years
+sim_time_ky = 15; %211;              % simulation time in thousands of years
                                     % note orig sim deleted after 205.55
 sim_time = sim_time_ky * 1000;
 dt_save = 12;                       % save every ## iterations
@@ -69,7 +69,7 @@ dt =     dt_save_years / dt_save;
 % i=1; CFO = 0.0036; Ain = 10; % Schwenk
 i=1; CFO = 0.005; Ain = 12; % new → lambda = 11.5 ± 7.9
 
-outfile = '5ka_2023' %Ch2 2016 params'
+outfile = '15ka_2023' %Ch2 2016 params'
 [river, nodecount, B, freq_mig] = migration_model_TRH_Ch2(CFO(i), ...
     Ain(i), do_you_have_stats_toolbox, outfile, sim_time, dt, dt_save); 
 
@@ -142,8 +142,10 @@ clear
 % load('code cleanup_30yr_A10_Cfo0.004_2Eo.mat')
 % load('code cleanup_30yr_A10_Cfo0.004_2Eo_offset.mat')
 
-load('20ka_2023_30yr_A3_Cfo0.024_2Eo.mat')
-load('20ka_2023_30yr_A3_Cfo0.024_2Eo_offset.mat')
+% load('5ka_2023_30yr_A3_Cfo0.024_2Eo.mat')
+% load('5ka_2023_30yr_A3_Cfo0.024_2Eo_offset.mat')
+load('50ka_2023_30yr_A12_Cfo0.005_2Eo.mat')
+load('50ka_2023_30yr_A12_Cfo0.005_2Eo_offset.mat')
 
 beep; pause(1); beep
 

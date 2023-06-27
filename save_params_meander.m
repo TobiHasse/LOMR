@@ -11,9 +11,9 @@ function save_params_meander()
 B      = 35;        % half width of the channel (meters)
 Qo     = 325.6;     % Characteristic streamflow (cubic meters / second) 
 S_valo = 0.00067;   % slope of the valley
-Eo     = 3.7*10^-8; % erodibility coefficient (double the value published 
-                    % for the Beatton River to speed up migration rates)
-
+% Eo     = 3.7*10^-8; % erodibility coefficient (double the value published 
+%                     % for the Beatton River to speed up migration rates)
+Eo     = 0.1*10^-8; % much lower to decrease migration rates
 % node spacing thresholds upper and lower limits (meters)
 dS_spacing_thresh = 133;
 too_close_thresh = 19.95;
