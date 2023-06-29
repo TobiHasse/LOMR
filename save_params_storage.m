@@ -47,10 +47,10 @@ load_limits       = false;% load boundaries of subsections as for
 hm = memory; % this works on a PC but might not on a MAC
 array_size = hm.MaxPossibleArrayBytes/45; 
 % manually set array size:
-%     array_sz = 10*10^6; % PC 4 GB RAM\\ depends on machine memory
-%     array_sz = 220*10^6; % PC 8 GB RAM\\ depends on machine memory
-%     array_sz = 450*10^6; % Mac 16 GB RAM\\ this for dissertation
-array_size = 100*10^6;  % optionally set array size                                                 
+%     array_size = 10*10^6; % PC 4 GB RAM\\ depends on machine memory
+%     array_size = 220*10^6; % PC 8 GB RAM\\ depends on machine memory
+%     array_size = 450*10^6; % Mac 16 GB RAM\\ this for dissertation
+%     array_size = 100*10^6;  % optionally set array size                                                 
 
 save('params_storage.mat','x_start','x_end','end_sim','dt',...
     'dt_save_years','time_step_years','sim_time_ky',...
